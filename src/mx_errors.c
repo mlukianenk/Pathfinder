@@ -6,14 +6,14 @@ void mx_printerr(char *filename) {
 
 bool mx_file_exist(char *filename) {
     int fd = open(filename, O_RDONLY);
-    char *buff;
-    int len = read(fd, buff, 1);
+    char buff; // здесь была строка, а тебе надо чтобы был символ, ибо ты считываешь по одному символу
+    int len = read(fd, &buff, 1); // а здесь передать не просто buff, а &buff, то есть ссылку на адресс
 
     if (len > 0)
         return 1;
     mx_printerr("error: file ");
     mx_printerr(filename);
-    mx_printerr("does not exist\n");
+    mx_printerr(" does not exist\n");
 
     close(fd);
 

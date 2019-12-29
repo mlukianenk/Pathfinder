@@ -2,6 +2,10 @@
 
 int main(int argc, char *argv[]) {
 	if (argc != 2) {
+		/*
+		** здесь тоже надо выводить все через printerr,
+		** как и все ошибки в целом, а еще не забывай переводить на новую строчку
+		*/
 		mx_printstr("usage: ./pathfinder [filename]");
 		exit(1);
 	}
