@@ -1,6 +1,6 @@
 #ifndef PATHFINDER_H
 #define PATHFINDER_H
-#include "libmx.h"
+#include "../libmx/inc/libmx.h"
 
 void mx_printerr(char *filename);
 
