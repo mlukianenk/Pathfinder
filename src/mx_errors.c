@@ -47,10 +47,16 @@ bool mx_invalid_line(const char *file) {
     while(*lines !='\n') {
         for (int i = 0; lines[i]; i++) {
             if (!(mx_isalpha(lines[i]))) {
-                mx_printerr("error: line 1 is not valid ");
+                mx_printerr("error: line 1 is not valid \n");
                 exit(0);
             }
         }
     }
     return 1;
+}
+
+bool mx_invalid_lines(const char *file) {
+    char *lines = mx_file_to_str(file); 
+
+    
 }
