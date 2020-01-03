@@ -35,9 +35,7 @@ bool mx_empty_file(char *filename) {
     mx_printerr(filename);
     mx_printerr(" is empty\n");
     close(fd);
-    return 0;
-    //посмотри на функцию ниже и подумай, что ты сделала там так,
-    //чтобы оно отрабатывала правильно, а эта и ф-ция выше нет
+    exit(0);
 }
 
 bool mx_invalid_line(const char *file) {
@@ -54,9 +52,29 @@ bool mx_invalid_line(const char *file) {
     return 1;
 }
 
-// закоментил, чтобы работало, допиши эту функцию 
+//записывает инфу с файла в линии
 
-// bool mx_invalid_lines(const char *file) {
-//     char *lines = mx_file_to_str(file); 
+char **mx_file_info(t_form *info, const char *file) {
+    char *file_lines = mx_file_to_str(file);
+    char **line = NULL;
 
-// }
+    file->line = mx_strsplit(file_lines, '\n');
+    return line;
+}
+
+//проверяет линии на ошибки
+/*
+void mx_printerr_line(int number) {
+    mx_printerr("error: line ");
+    mx_printerr(mx_itoa(number));
+    mx_printerr(" is not valid"\n);
+    return 0;
+}
+
+bool mx_invalid_lines(t_form *info) {
+    for (int i = 0; info->line[i]; i++) {
+        int j = 0;
+        
+    }
+
+ }*/

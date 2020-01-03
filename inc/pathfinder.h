@@ -3,8 +3,8 @@
 #include "libmx/inc/libmx.h"
 
 typedef struct s_form {
-    int islands;
-    char **line_file;
+    int islands; //the amount of islands
+    char **lines; //
 } t_form;
 
 void mx_printerr(char *filename);
