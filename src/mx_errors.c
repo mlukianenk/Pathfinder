@@ -37,29 +37,38 @@ bool mx_empty_file(char *filename) {
     close(fd);
     exit(0);
 }
+/*
+    функция неправильная совсем
+*/
+// bool mx_invalid_line(const char *file) {
+//     char *lines = mx_file_to_str(file);
 
-bool mx_invalid_line(const char *file) {
-    char *lines = mx_file_to_str(file);
-
-    while(*lines !='\n') {
-        for (int i = 0; lines[i]; i++) {
-            if (!(mx_isalpha(lines[i]))) {
-                mx_printerr("error: line 1 is not valid \n");
-                exit(0);
-            }
-        }
-    }
-    return 1;
-}
+//     while(*lines !='\n') {
+//         for (int i = 0; lines[i]; i++) {
+//             if (!(mx_isalpha(lines[i]))) {
+//                 mx_printerr("error: line 1 is not valid \n");
+//                 exit(0);
+//             }
+//         }
+//     }
+//     return 1;
+// }
 
 //записывает инфу с файла в линии
 
 char **mx_file_info(t_form *info, const char *file) {
     char *file_lines = mx_file_to_str(file);
-    char **line = NULL;
+    // этот двумерный массив не нужен пока, ты заносишь в массив,
+    // который создан у тебя в структуре
+    //char **line = NULL;
+    // не правильно обращаешься к структуре, здесь info должно быть
+    info->lines = mx_strsplit(file_lines, '\n');
+    for (int i = 0; info->lines[i]; i++)
+        printf("%s\n", info->lines[i]);
 
-    file->line = mx_strsplit(file_lines, '\n');
-    return line;
+    // здесь неправильно, ты внесла данные в массив и тебе не нужно его
+    // возвращать, ибо он уже в структуре  
+    return NULL;
 }
 
 //проверяет линии на ошибки

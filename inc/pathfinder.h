@@ -14,4 +14,5 @@ bool mx_file_exist(char *filename);
 bool mx_empty_file(char *filename);
 bool mx_invalid_line(const char *file);
 
+char **mx_file_info(t_form *info, const char *file);
 #endif
