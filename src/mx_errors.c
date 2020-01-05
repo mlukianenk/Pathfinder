@@ -5,9 +5,14 @@ void mx_printerr(char *filename) {
 }
 
 bool mx_isalpha(int c) {
-    if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) {
+    if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
         return true;
-    }
+    return false;
+}
+
+bool mx_isdigit(int c) {
+    if (c >= 48 && c <= 57)
+        return true;
     return false;
 }
 
@@ -36,38 +41,30 @@ bool mx_empty_file(char *filename) {
     mx_printerr(" is empty\n");
     close(fd);
     exit(0);
-}
-/*
-    функция неправильная совсем
-*/
-// bool mx_invalid_line(const char *file) {
-//     char *lines = mx_file_to_str(file);
 
-//     while(*lines !='\n') {
-//         for (int i = 0; lines[i]; i++) {
-//             if (!(mx_isalpha(lines[i]))) {
-//                 mx_printerr("error: line 1 is not valid \n");
-//                 exit(0);
-//             }
-//         }
-//     }
-//     return 1;
-// }
+
+}
+
+bool mx_invalid_line(const char *file) {
+    char *lines = mx_file_to_str(file);
+
+    for (int i = 0; lines[i] != '\n'; i++) {
+        if (!(mx_isdigit(lines[i]))) {
+            mx_printerr("error: line 1 is not valid \n");
+            exit(0);
+        }
+    }
+    return 1;
+}
 
 //записывает инфу с файла в линии
 
 char **mx_file_info(t_form *info, const char *file) {
     char *file_lines = mx_file_to_str(file);
-    // этот двумерный массив не нужен пока, ты заносишь в массив,
-    // который создан у тебя в структуре
-    //char **line = NULL;
-    // не правильно обращаешься к структуре, здесь info должно быть
+
     info->lines = mx_strsplit(file_lines, '\n');
     for (int i = 0; info->lines[i]; i++)
         printf("%s\n", info->lines[i]);
-
-    // здесь неправильно, ты внесла данные в массив и тебе не нужно его
-    // возвращать, ибо он уже в структуре  
     return NULL;
 }
 

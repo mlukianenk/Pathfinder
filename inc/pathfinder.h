@@ -4,11 +4,12 @@
 
 typedef struct s_form {
     int islands; //the amount of islands
-    char **lines; //
+    char **lines;
 } t_form;
 
 void mx_printerr(char *filename);
 bool mx_isaplha(int c);
+bool mx_isdigit(int c);
 
 bool mx_file_exist(char *filename);
 bool mx_empty_file(char *filename);
