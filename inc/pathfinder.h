@@ -10,6 +10,9 @@ typedef struct s_form {
 void mx_printerr(char *filename);
 bool mx_isaplha(int c);
 bool mx_isdigit(int c);
+void mx_printerr_line(int number);
+bool mx_invalid_digit(t_form *info, int i, int j);
+bool mx_invalid_lines(t_form *info);
 
 bool mx_file_exist(char *filename);
 bool mx_empty_file(char *filename);

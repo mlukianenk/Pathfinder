@@ -13,5 +13,6 @@ int main(int argc, char *argv[]) {
 	mx_empty_file(argv[1]);
 	mx_invalid_line(argv[1]);
 	mx_file_info(info, argv[1]);
+	mx_invalid_lines(info);
 	return 0;
 }

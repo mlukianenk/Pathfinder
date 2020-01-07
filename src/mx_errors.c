@@ -15,6 +15,7 @@ bool mx_isdigit(int c) {
         return true;
     return false;
 }
+//function checks does the file exist
 
 bool mx_file_exist(char *filename) {
     int fd = open(filename, O_RDONLY);
@@ -28,6 +29,8 @@ bool mx_file_exist(char *filename) {
 
     return 0;
 }
+
+//function checks is file empty or not
 
 bool mx_empty_file(char *filename) {
     int fd = open(filename, O_RDONLY);
@@ -45,6 +48,8 @@ bool mx_empty_file(char *filename) {
 
 }
 
+//function checks the 1 line that must contain only digits
+
 bool mx_invalid_line(const char *file) {
     char *lines = mx_file_to_str(file);
 
@@ -57,30 +62,62 @@ bool mx_invalid_line(const char *file) {
     return 1;
 }
 
-//записывает инфу с файла в линии
+//writes information from the file into lines
 
 char **mx_file_info(t_form *info, const char *file) {
     char *file_lines = mx_file_to_str(file);
 
     info->lines = mx_strsplit(file_lines, '\n');
-    for (int i = 0; info->lines[i]; i++)
-        printf("%s\n", info->lines[i]);
+    //for (int i = 0; info->lines[i]; i++) //цикл проверяющий все ли записалось в массив
+    //    printf("%s\n", info->lines[i]);
     return NULL;
 }
 
-//проверяет линии на ошибки
-/*
+//checks the lines 
+
+//не правильно выводит номер ошибки, всегда выводит 2
+
 void mx_printerr_line(int number) {
     mx_printerr("error: line ");
     mx_printerr(mx_itoa(number));
-    mx_printerr(" is not valid"\n);
-    return 0;
+    mx_printerr(" is not valid\n");
+   // return 0;
+}
+
+bool mx_invalid_digit(t_form *info, int i, int j) {
+    while (info->lines[i]) {
+        if (info->lines[i][j] <= 0 || info->lines[i][j] >= 9) {
+                mx_printerr_line(i + 1); //если тут меняю 1 на 2, то выведет, что ошибка в 3 линии
+                exit(0);
+        }
+    j++;
+    }
+    return 1;
 }
 
 bool mx_invalid_lines(t_form *info) {
-    for (int i = 0; info->line[i]; i++) {
+    for (int i = 1; info->lines[i]; i++) {
         int j = 0;
-        
+        while (info->lines[i][j] != '-' && info->lines[i]) {
+            if (!(mx_isalpha(info->lines[i][j]))) {
+                mx_printerr_line(i + 3); //а если тут поменять на любое число, то ошибка вечно во 2 линии будет
+                return 0;
+            }
+            j++;
+        }
+        j++;
+        while (info->lines[i][j] != ',' && info->lines[i]) {
+            if (!(mx_isalpha(info->lines[i][j]))) {
+                mx_printerr_line(i + 1);
+                return 0;    
+            }
+            j++;
+        }
+        j++;
+        if (!(mx_invalid_digit(info, i, j))) {
+//            mx_printerr_line(i + 1);
+            return 0;
+        }
     }
-
- }*/
+    return 1;
+}
