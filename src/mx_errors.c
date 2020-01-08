@@ -85,12 +85,12 @@ void mx_printerr_line(int number) {
 }
 
 bool mx_invalid_digit(t_form *info, int i, int j) {
-    while (info->lines[i]) {
-        if (info->lines[i][j] <= 0 || info->lines[i][j] >= 9) {
-                mx_printerr_line(i + 1); //если тут меняю 1 на 2, то выведет, что ошибка в 3 линии
+    while (info->lines[i][j]) {
+        if (!(info->lines[i][j] >= '0' && info->lines[i][j] <= '9')) {
+                mx_printerr_line(i + 1);
                 exit(0);
         }
-    j++;
+        j++;
     }
     return 1;
 }
@@ -98,9 +98,10 @@ bool mx_invalid_digit(t_form *info, int i, int j) {
 bool mx_invalid_lines(t_form *info) {
     for (int i = 1; info->lines[i]; i++) {
         int j = 0;
+
         while (info->lines[i][j] != '-' && info->lines[i]) {
             if (!(mx_isalpha(info->lines[i][j]))) {
-                mx_printerr_line(i + 3); //а если тут поменять на любое число, то ошибка вечно во 2 линии будет
+                mx_printerr_line(i + 1);
                 return 0;
             }
             j++;
@@ -115,7 +116,7 @@ bool mx_invalid_lines(t_form *info) {
         }
         j++;
         if (!(mx_invalid_digit(info, i, j))) {
-//            mx_printerr_line(i + 1);
+            // mx_printerr_line(i + 1);
             return 0;
         }
     }
