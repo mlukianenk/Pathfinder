@@ -17,14 +17,16 @@ bool mx_invalid_lines(t_form *info);
 
 bool mx_file_exist(char *filename);
 bool mx_empty_file(char *filename);
-bool mx_invalid_line(const char *file);
+bool mx_invalid_first(t_form *info);
 char **mx_islands_info(t_form *info);
+bool mx_invalid_amount(t_form *info);
 
+int mx_atoi(const char *str);
 int mx_multiarr_len(char **all_islands);
 int mx_multilen_no_zero(char **all_islands);
-char **mx_exclusive_islands(t_form *info);
+void mx_exclusive_islands(t_form *info);
 char *mx_write_zero(char *str);
 char **mx_find_exclusive_islands(char *all_lines);
 
-char **mx_file_info(t_form *info, const char *file);
+bool mx_file_info(t_form *info, const char *file);
 #endif

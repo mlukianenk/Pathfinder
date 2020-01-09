@@ -15,6 +15,22 @@ bool mx_isdigit(int c) {
         return true;
     return false;
 }
+
+int mx_atoi(const char *str) {
+    int sign = 0;
+    int sum = 0;
+
+    for (; mx_isspace(*str); ++str);
+
+    if (*str == '+' || *str == '-')
+        sign = *str++ == '-';
+
+    while (*str && mx_isdigit(*str))
+        sum = sum * 10 + *str++ - 48;
+
+    return sign ? -sum : sum;
+}
+
 //function checks does the file exist
 
 bool mx_file_exist(char *filename) {
@@ -44,33 +60,56 @@ bool mx_empty_file(char *filename) {
     mx_printerr(" is empty\n");
     close(fd);
     exit(0);
-
-
-}
-
-//function checks the 1 line that must contain only digits
-
-bool mx_invalid_line(const char *file) {
-    char *lines = mx_file_to_str(file);
-
-    for (int i = 0; lines[i] != '\n'; i++) {
-        if (!(mx_isdigit(lines[i]))) {
-            mx_printerr("error: line 1 is not valid \n");
-            exit(0);
-        }
-    }
-    return 1;
 }
 
 //writes information from the file into lines
 
-char **mx_file_info(t_form *info, const char *file) {
-    char *file_lines = mx_file_to_str(file);
+// char **mx_file_info(t_form *info, const char *file) {
+//     char *file_lines = mx_file_to_str(file);
 
+//     info->lines = mx_strsplit(file_lines, '\n');
+//     // for (int i = 0; info->lines[i]; i++) //цикл проверяющий все ли записалось в массив
+//     //    printf("%s\n", info->lines[i]);
+//     return NULL;
+// }
+
+bool mx_file_info(t_form *info, const char *file) {
+    char *file_lines = mx_file_to_str(file);
+//int flag = 0;
+
+    for (int i = 0, j = 0; file_lines[i]; i++) {
+        if (file_lines[i] == '\n'&& file_lines[i + 1] != '\n')
+            j++;
+        if (file_lines[i] == '\n' && file_lines[i + 1] == '\n') {
+            mx_printerr("error: line ");
+            mx_printerr(mx_itoa(j + 1));
+            mx_printerr(" is not valid\n");
+            exit(0);
+        }
+    }
     info->lines = mx_strsplit(file_lines, '\n');
-    //for (int i = 0; info->lines[i]; i++) //цикл проверяющий все ли записалось в массив
+    // for (int i = 0; info->lines[i]; i++) //цикл проверяющий все ли записалось в массив
     //    printf("%s\n", info->lines[i]);
     return NULL;
+}
+
+
+//function checks the 1st line that must contain only digits
+
+bool mx_invalid_first(t_form *info) {
+    for (int i = 0; info->lines[0][i] != '\0'; i++) {
+        if (!(mx_isdigit(info->lines[0][i]))) {
+            mx_printerr("error: line 1 is not valid \n");
+            exit(0);
+        }
+    }
+    if (mx_atoi(info->lines[0]) > 2147483647 || mx_atoi(info->lines[0]) < 1) {
+        mx_printerr("error: line 1 is not valid \n");
+        exit(0);
+    }
+    else
+        info->islands = mx_atoi(info->lines[0]);
+    return 1;
 }
 
 //checks the lines 
@@ -99,7 +138,7 @@ bool mx_invalid_lines(t_form *info) {
         while (info->lines[i][j] != '-' && info->lines[i]) {
             if (!(mx_isalpha(info->lines[i][j]))) {
                 mx_printerr_line(i + 1);
-                return 0;
+                exit(0);
             }
             j++;
         }
@@ -107,14 +146,13 @@ bool mx_invalid_lines(t_form *info) {
         while (info->lines[i][j] != ',' && info->lines[i]) {
             if (!(mx_isalpha(info->lines[i][j]))) {
                 mx_printerr_line(i + 1);
-                return 0;    
+                exit(0);    
             }
             j++;
         }
         j++;
         if (!(mx_invalid_digit(info, i, j))) {
-            // mx_printerr_line(i + 1);
-            return 0;
+            exit(0);
         }
     }
     return 1;
@@ -142,10 +180,9 @@ int mx_multilen_no_zero(char **all_islands) {
     return len;
 }
 
-char **mx_exclusive_islands(t_form *info) {
+void mx_exclusive_islands(t_form *info) {
 
     char *all_lines = NULL;
-    char **no_repeats = NULL;
    
     for (int i = 1; info->lines[i]; i++) {
         for (int j = 0; info->lines[i][j]; j++) {
@@ -155,7 +192,7 @@ char **mx_exclusive_islands(t_form *info) {
     }
 
     if (!(all_lines = mx_strnew(mx_multiarr_len(info->lines))))
-        return NULL;
+        return;
     for (int i = 1, k = 0; info->lines[i]; i++) {
         if (i > 1)
             all_lines[k++] = '-';
@@ -163,11 +200,10 @@ char **mx_exclusive_islands(t_form *info) {
             all_lines[k] = info->lines[i][j];
         }
     }
-
-    no_repeats = mx_find_exclusive_islands(all_lines);
-    for (int i = 0; no_repeats[i];i++)
-        printf("%s\n", no_repeats[i]);
-    return no_repeats;
+    info->islands_names = mx_find_exclusive_islands(all_lines);
+    // return NULL;
+    // for (int i = 0; no_repeats[i];i++)
+    //     printf("%s\n", no_repeats[i]);
 }
 
 char *mx_write_zero(char *str) {
@@ -192,17 +228,29 @@ char **mx_find_exclusive_islands(char *all_lines) {
                 w_repeats[j] = mx_write_zero(w_repeats[j]);
         }
     }
-    printf("12\n");
-    no_repeats = (char **) malloc(sizeof(*no_repeats) * (mx_multilen_no_zero(w_repeats) + 1));
-    printf("12\n");   
+    no_repeats = (char **) malloc(sizeof(*no_repeats) * (mx_multilen_no_zero(w_repeats) + 1));  
     while (w_repeats[i]) {
         if (mx_strcmp(w_repeats[i], "0") == 0)
             i++;
         else
             no_repeats[k++] = mx_strdup(w_repeats[i++]);
     }
-
     no_repeats[k] = NULL;
     mx_del_strarr(&w_repeats);
     return no_repeats;
+}
+
+//function that checks is there correct amount of islands in the file
+
+bool mx_invalid_amount(t_form *info) {
+    int count = 0;
+    
+    for (int i = 0; info->islands_names[i]; i++) {
+        count++;   
+    }
+    if (count != info->islands) {
+        mx_printerr("error: invalid number of islands\n");
+        exit(0);
+    }
+    return 1;
 }
