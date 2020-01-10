@@ -2,11 +2,9 @@ NAME = pathfinder
 
 INC = pathfinder.h
 
-SRC = main.c \
-		mx_errors.c
+SRC = *.c
 
-OBJ = main.o \
-		mx_errors.o
+OBJ = *.o
 
 CFLAGS = -std=c11 -Wall -Wextra -Wpedantic -Werror
 

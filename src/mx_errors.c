@@ -64,18 +64,8 @@ bool mx_empty_file(char *filename) {
 
 //writes information from the file into lines
 
-// char **mx_file_info(t_form *info, const char *file) {
-//     char *file_lines = mx_file_to_str(file);
-
-//     info->lines = mx_strsplit(file_lines, '\n');
-//     // for (int i = 0; info->lines[i]; i++) //цикл проверяющий все ли записалось в массив
-//     //    printf("%s\n", info->lines[i]);
-//     return NULL;
-// }
-
 bool mx_file_info(t_form *info, const char *file) {
     char *file_lines = mx_file_to_str(file);
-//int flag = 0;
 
     for (int i = 0, j = 0; file_lines[i]; i++) {
         if (file_lines[i] == '\n'&& file_lines[i + 1] != '\n')
@@ -88,11 +78,31 @@ bool mx_file_info(t_form *info, const char *file) {
         }
     }
     info->lines = mx_strsplit(file_lines, '\n');
+    info->all_lines = mx_strsplit(file_lines, '\n');
+    mx_strdel(&file_lines);
     // for (int i = 0; info->lines[i]; i++) //цикл проверяющий все ли записалось в массив
     //    printf("%s\n", info->lines[i]);
     return NULL;
 }
 
+//function checks the distant between islands to be under max int
+
+bool mx_invalid_distance(t_form *info) {
+    int j = 0;
+
+    for (int i = 1; info->lines[i]; i++) {
+        j = mx_get_char_index(info->lines[i], ',') + 1; //чтобы иметь индекс не ',' а 1 цифры
+        if (mx_strlen(&info->lines[i][j]) > 9) {
+            mx_printerr_line(i + 1);
+            exit(0);
+        }
+        if (mx_atoi(&info->lines[i][j]) == 0) {
+            mx_printerr_line(i + 1);
+            exit(0);
+        }
+    } 
+    return 1;
+}
 
 //function checks the 1st line that must contain only digits
 
