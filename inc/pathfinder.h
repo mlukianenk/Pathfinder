@@ -11,7 +11,7 @@ typedef struct s_form {
 
 void mx_all_functions(char *argv[], t_form *info);
 void mx_printerr(char *filename);
-bool mx_isaplha(int c);
+bool mx_isalpha(int c);
 bool mx_isdigit(int c);
 void mx_printerr_line(int number);
 bool mx_invalid_digit(t_form *info, int i, int j);
