@@ -9,4 +9,5 @@ void mx_all_functions(char *argv[], t_form *info) {
 	mx_invalid_lines(info);
 	mx_exclusive_islands(info);
 	mx_invalid_amount(info);
+	mx_create_mass(info);
 }

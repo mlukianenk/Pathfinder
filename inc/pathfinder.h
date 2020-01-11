@@ -39,6 +39,11 @@ bool mx_invalid_lines(t_form *info);
 bool mx_invalid_distance(t_form *info);
 bool mx_invalid_first(t_form *info);
 
-// char **mx_islands_info(t_form *info);
+//mx_matrix.c
+int **mx_create_zero_mass(int N);
+// int **mx_zero_matrix(int N);
+// int mx_get_digit_index(char *line);
+int **mx_create_mass(t_form *p_find);
+// int **mx_create_matrix(t_form *info);
 
 #endif

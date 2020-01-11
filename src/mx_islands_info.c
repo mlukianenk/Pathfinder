@@ -62,7 +62,6 @@ void mx_exclusive_islands(t_form *info) {
 char **mx_find_exclusive_islands(char *all_lines) {
     char **w_repeats = NULL;
     char **no_repeats = NULL;
-    int i = 0; //будет идти по строкам w_repeats
     int k = 0; //будет идти по строкам no_repeats
 
     w_repeats = mx_strsplit(all_lines, '-');
@@ -74,7 +73,8 @@ char **mx_find_exclusive_islands(char *all_lines) {
         }
     }
     no_repeats = (char **) malloc(sizeof(*no_repeats) * (mx_multilen_no_zero(w_repeats) + 1));  
-    while (w_repeats[i]) {
+
+    for (int i = 0; w_repeats[i];) {
         if (mx_strcmp(w_repeats[i], "0") == 0)
             i++;
         else
