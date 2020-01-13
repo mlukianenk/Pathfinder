@@ -8,6 +8,5 @@ int main(int argc, char *argv[]) {
 	}
 	t_form *info = mx_init (argc, argv);
 	mx_all_functions(argv, info);
-	
 	return 0;
 }

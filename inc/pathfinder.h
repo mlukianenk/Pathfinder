@@ -7,10 +7,13 @@ typedef struct s_form {
     char **lines;
     char **all_lines; //multiarr reserv with all lines
     char **islands_names; //all islands
+    int **matrix; //matrix with distance between islands
 } t_form;
 
 void mx_all_functions(char *argv[], t_form *info); //main.c
 t_form *mx_init(int argc, char **argv); //mx_init.c
+
+void mx_delete_liks(t_form *info);
 
 //mx_basic_func.c
 bool mx_isalpha(int c);
@@ -23,7 +26,7 @@ void mx_printerr_line(int number);
 
 char *mx_write_zero(char *str);
 int mx_multiarr_len(char **all_islands);
-void mx_exclusive_islands(t_form *info);
+char **mx_exclusive_islands(t_form *info);
 int mx_multilen_no_zero(char **all_islands);
 char **mx_find_exclusive_islands(char *all_lines);
 
@@ -41,9 +44,12 @@ bool mx_invalid_first(t_form *info);
 
 //mx_matrix.c
 int **mx_create_zero_mass(int N);
-// int **mx_zero_matrix(int N);
-// int mx_get_digit_index(char *line);
-int **mx_create_mass(t_form *p_find);
-// int **mx_create_matrix(t_form *info);
+int **mx_zero_matrix(int N);
+int mx_get_digit_index(char *line);
+int **mx_create_matrix(t_form *info);
+
+//mx_algorithm.c
+
+void mx_algorithm(t_form *info);
 
 #endif

@@ -60,8 +60,10 @@ bool mx_invalid_amount(t_form *info) {
     int count = 0;
     
     for (int i = 0; info->islands_names[i]; i++) {
+        // printf("%d\n", count);
         count++;   
     }
+    // printf("%d\n", count);
     if (count != info->islands) {
         mx_printerr("error: invalid number of islands\n");
         exit(0);

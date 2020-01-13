@@ -5,7 +5,8 @@ t_form *mx_init(int argc, char **argv) {
     info->islands = 0;
 	info->lines = NULL;
 	info->all_lines = NULL;
-	info->islands_names = NULL;    
+	info->islands_names = NULL; 
+    info->matrix = NULL;   
 
     (void)argc;
     (void)argv;

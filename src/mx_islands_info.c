@@ -34,8 +34,9 @@ char *mx_write_zero(char *str) {
 }
 
 //finds the names of the islands in my file
-void mx_exclusive_islands(t_form *info) {
+char **mx_exclusive_islands(t_form *info) {
     char *all_lines = NULL;
+    char **no_repeats = NULL;
    
     for (int i = 1; info->lines[i]; i++) {
         for (int j = 0; info->lines[i][j]; j++) {
@@ -45,7 +46,7 @@ void mx_exclusive_islands(t_form *info) {
     }
 
     if (!(all_lines = mx_strnew(mx_multiarr_len(info->lines))))
-        return;
+        return NULL;
     for (int i = 1, k = 0; info->lines[i]; i++) {
         if (i > 1)
             all_lines[k++] = '-';
@@ -53,9 +54,14 @@ void mx_exclusive_islands(t_form *info) {
             all_lines[k] = info->lines[i][j];
         }
     }
-    info->islands_names = mx_find_exclusive_islands(all_lines);
-    // for (int i = 0; no_repeats[i];i++)
-    //     printf("%s\n", no_repeats[i]);
+    
+    no_repeats = mx_find_exclusive_islands(all_lines);
+    info->islands_names = no_repeats;
+    // for (int i = 0; info->islands_names[i];i++)
+    //     printf("%s\n", info->islands_names[i]);
+    // mx_del_strarr(&no_repeats); //почему удаляя 2-массив перестает работать mx_invalid_amount?
+    return no_repeats;
+    // return NULL;
 }
 
 //deleats repeated names of islands and gives back the multiarr with exclusive islands 
@@ -75,7 +81,7 @@ char **mx_find_exclusive_islands(char *all_lines) {
     no_repeats = (char **) malloc(sizeof(*no_repeats) * (mx_multilen_no_zero(w_repeats) + 1));  
 
     for (int i = 0; w_repeats[i];) {
-        if (mx_strcmp(w_repeats[i], "0") == 0)
+        if (mx_strcmp("0", w_repeats[i]) == 0)
             i++;
         else
             no_repeats[k++] = mx_strdup(w_repeats[i++]);
