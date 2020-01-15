@@ -2,7 +2,7 @@
 
 int **mx_zero_matrix(int N) {
     int **mass = (int **)malloc(sizeof(int *) * N);
-    printf("%d\n", N);
+    // printf("%d\n", N);
     int i = 0;
     int j = 0;
     for (i = 0; i < N; i++) {
@@ -54,11 +54,11 @@ int **mx_create_matrix(t_form *info) {
     }
     info->matrix = mass;
     
-    for (int i = 0; i < info->islands; i++) {
-        for (int j = 0; j < info->islands; j++)
-            printf("[%d]\t", info->matrix[i][j]);
-        printf("\n");
-    }
-	printf("\n");
+    // for (int i = 0; i < info->islands; i++) {
+    //     for (int j = 0; j < info->islands; j++)
+    //         printf("[%d]\t", info->matrix[i][j]);
+    //     printf("\n");
+    // }
+	// printf("\n");
     return mass;
 }

@@ -10,10 +10,15 @@ typedef struct s_form {
     int **matrix; //matrix with distance between islands
 } t_form;
 
+// typedef struct s_path {
+//     int *path; //индекс вершин по j
+//     int count; //счетчик
+//     int size; //размер, чтобы знать где остановиться 
+// } t_path;
+
 void mx_all_functions(char *argv[], t_form *info); //main.c
 t_form *mx_init(int argc, char **argv); //mx_init.c
-
-void mx_delete_liks(t_form *info);
+void mx_delete_liks(t_form *info); //mx_all_functions.c
 
 //mx_basic_func.c
 bool mx_isalpha(int c);

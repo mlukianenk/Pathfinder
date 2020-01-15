@@ -2,7 +2,7 @@
 
 void mx_algorithm(t_form *info) {
     int new_distance = 0;
-
+    
     for (int k = 0; k < info->islands; k++) {
         for (int i = 0; i < info->islands; i++) {
             for (int j = 0; j < info->islands; j++) {
@@ -14,9 +14,9 @@ void mx_algorithm(t_form *info) {
             }
         }
     }
-    for (int i = 0; i < info->islands; i++) {
-        for (int j = 0; j < info->islands; j++)
-            printf("[%d]\t", info->matrix[i][j]);
-        printf("\n");
-    }
+    // for (int i = 0; i < info->islands; i++) {
+    //     for (int j = 0; j < info->islands; j++)
+    //         printf("[%d]\t", info->matrix[i][j]);
+    //     printf("\n");
+    // }
 }

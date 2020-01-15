@@ -22,7 +22,7 @@ char **mx_strsplit(const char *s, char c) {
 	char **new = NULL;
 
 	count = mx_count_words(s, c);
-	new = (char **)malloc ((count + 1) * sizeof(char *));
+	new = (char **)malloc(sizeof(char *) * (count + 1));
 	while (*s != '\0') {
 		if (*s == c)
 			s++;

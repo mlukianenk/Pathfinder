@@ -35,7 +35,7 @@ bool mx_empty_file(char *filename) {
 
 bool mx_file_info(t_form *info, const char *file) {
     char *file_lines = mx_file_to_str(file);
-
+	
     for (int i = 0, j = 0; file_lines[i]; i++) {
         if (file_lines[i] == '\n'&& file_lines[i + 1] != '\n')
             j++;
@@ -46,6 +46,7 @@ bool mx_file_info(t_form *info, const char *file) {
             exit(0);
         }
     }
+    
     info->lines = mx_strsplit(file_lines, '\n');
     info->all_lines = mx_strsplit(file_lines, '\n');
     mx_strdel(&file_lines);
@@ -60,10 +61,8 @@ bool mx_invalid_amount(t_form *info) {
     int count = 0;
     
     for (int i = 0; info->islands_names[i]; i++) {
-        // printf("%d\n", count);
         count++;   
     }
-    // printf("%d\n", count);
     if (count != info->islands) {
         mx_printerr("error: invalid number of islands\n");
         exit(0);
