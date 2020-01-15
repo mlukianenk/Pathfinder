@@ -7,17 +7,19 @@ typedef struct s_form {
     char **lines;
     char **all_lines; //multiarr reserv with all lines
     char **islands_names; //all islands
+    int **file_matrix; //matrix from file
     int **matrix; //matrix with distance between islands
 } t_form;
 
-// typedef struct s_path {
-//     int *path; //индекс вершин по j
-//     int count; //счетчик
-//     int size; //размер, чтобы знать где остановиться 
-// } t_path;
+typedef struct s_path {
+    int *path; //индекс вершин по j
+    int count; //счетчик
+    int size; //размер, чтобы знать где остановиться 
+} t_path;
 
 void mx_all_functions(char *argv[], t_form *info); //main.c
 t_form *mx_init(int argc, char **argv); //mx_init.c
+t_path *mx_init_path(t_form *info, int start, int end); //mx_init.c
 void mx_delete_liks(t_form *info); //mx_all_functions.c
 
 //mx_basic_func.c
@@ -56,5 +58,17 @@ int **mx_create_matrix(t_form *info);
 //mx_algorithm.c
 
 void mx_algorithm(t_form *info);
+
+//mx_output.c
+void mx_all_output(t_form *info);
+void mx_output(t_form *info, int start, int end);
+void mx_backtrack(t_form *info, t_path *path);
+int mx_check_path(int n, t_form *info, t_path *path);
+ 
+//mx_output_all.c
+void mx_output_format(t_form *info, t_path *path);
+void mx_print_start(t_form *info, t_path *path);
+void mx_print_route(t_form *info, t_path *path);
+void mx_print_dist(t_form *info, t_path *path);
 
 #endif

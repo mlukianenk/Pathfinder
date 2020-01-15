@@ -8,15 +8,14 @@ void mx_algorithm(t_form *info) {
             for (int j = 0; j < info->islands; j++) {
                 new_distance = info->matrix[i][k] + info->matrix[k][j];
                 if (new_distance < info->matrix[i][j]) {
-                    // printf("23\n");
                     info->matrix[i][j] = new_distance;
                 }
             }
         }
     }
-    // for (int i = 0; i < info->islands; i++) {
-    //     for (int j = 0; j < info->islands; j++)
-    //         printf("[%d]\t", info->matrix[i][j]);
-    //     printf("\n");
-    // }
+    for (int i = 0; i < info->islands; i++) {
+        for (int j = 0; j < info->islands; j++)
+            printf("[%d]\t", info->matrix[i][j]);
+        printf("\n");
+    }
 }

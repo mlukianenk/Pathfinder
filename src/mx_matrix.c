@@ -53,12 +53,12 @@ int **mx_create_matrix(t_form *info) {
         mass[k][j] = mass[j][k];
     }
     info->matrix = mass;
-    
-    // for (int i = 0; i < info->islands; i++) {
-    //     for (int j = 0; j < info->islands; j++)
-    //         printf("[%d]\t", info->matrix[i][j]);
-    //     printf("\n");
-    // }
-	// printf("\n");
+    info->file_matrix = mass;
+    for (int i = 0; i < info->islands; i++) {
+        for (int j = 0; j < info->islands; j++)
+            printf("[%d]\t", info->matrix[i][j]);
+        printf("\n");
+    }
+	printf("\n");
     return mass;
 }
