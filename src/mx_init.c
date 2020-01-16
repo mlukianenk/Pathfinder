@@ -1,14 +1,14 @@
 #include "pathfinder.h"
 
 t_form *mx_init(int argc, char **argv) {
-    t_form *info = (t_form *)malloc(sizeof(t_form)); // тут правильно
-    info->islands = 0;
-	info->lines = NULL;
-	info->all_lines = NULL;
-	info->islands_names = NULL;
-    info->file_matrix = NULL;
-    info->matrix = NULL;   
+    t_form *info = (t_form *)malloc(sizeof(t_form));
 
+    info->islands = 0;
+    info->lines = NULL;
+    info->all_lines = NULL;
+    info->islands_names = NULL;
+    info->file_matrix = NULL;
+    info->matrix = NULL;
     (void)argc;
     (void)argv;
     return info;
@@ -17,9 +17,8 @@ t_form *mx_init(int argc, char **argv) {
 static int* mem_int_arr(int count) {
     int *arr = (int *)malloc(sizeof(int) * count);
 
-    for (int i = 0; i < count; i++) {
+    for (int i = 0; i < count; i++)
         arr[i] = 0;
-    }
     return arr;
 }
 

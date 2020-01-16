@@ -12,15 +12,17 @@ typedef struct s_form {
 } t_form;
 
 typedef struct s_path {
-    int *path; //индекс вершин по j
-    int count; //счетчик
-    int size; //размер, чтобы знать где остановиться 
+    int *path;
+    int count;
+    int size;
 } t_path;
 
 void mx_all_functions(char *argv[], t_form *info); //main.c
-t_form *mx_init(int argc, char **argv); //mx_init.c
-t_path *mx_init_path(t_form *info, int start, int end); //mx_init.c
 void mx_delete_liks(t_form *info); //mx_all_functions.c
+
+//mx_init.c
+t_form *mx_init(int argc, char **argv);
+t_path *mx_init_path(t_form *info, int start, int end);
 
 //mx_basic_func.c
 bool mx_isalpha(int c);
@@ -44,9 +46,9 @@ bool mx_invalid_amount(t_form *info);
 bool mx_file_info(t_form *info, const char *file);
 
 //mx_line_errors.c
-bool mx_invalid_digit(t_form *info, int i, int j);
+// bool mx_invalid_digit(t_form *info, int i, int j);
 bool mx_invalid_lines(t_form *info);
-bool mx_invalid_distance(t_form *info);
+bool mx_invalid_max_distance(t_form *info);
 bool mx_invalid_first(t_form *info);
 
 //mx_matrix.c
@@ -56,7 +58,6 @@ int mx_get_digit_index(char *line);
 int **mx_create_matrix(t_form *info);
 
 //mx_algorithm.c
-
 void mx_algorithm(t_form *info);
 
 //mx_output.c

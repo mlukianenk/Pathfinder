@@ -11,7 +11,6 @@ bool mx_file_exist(char *filename) {
     mx_printerr(filename);
     mx_printerr(" does not exist\n");
     close(fd);
-
     return 0;
 }
 
@@ -35,7 +34,7 @@ bool mx_empty_file(char *filename) {
 
 bool mx_file_info(t_form *info, const char *file) {
     char *file_lines = mx_file_to_str(file);
-	
+
     for (int i = 0, j = 0; file_lines[i]; i++) {
         if (file_lines[i] == '\n'&& file_lines[i + 1] != '\n')
             j++;
@@ -46,12 +45,9 @@ bool mx_file_info(t_form *info, const char *file) {
             exit(0);
         }
     }
-    
     info->lines = mx_strsplit(file_lines, '\n');
     info->all_lines = mx_strsplit(file_lines, '\n');
     mx_strdel(&file_lines);
-    // for (int i = 0; info->lines[i]; i++) //цикл проверяющий все ли записалось в массив
-    //    printf("%s\n", info->lines[i]);
     return NULL;
 }
 
@@ -59,9 +55,9 @@ bool mx_file_info(t_form *info, const char *file) {
 
 bool mx_invalid_amount(t_form *info) {
     int count = 0;
-    
+
     for (int i = 0; info->islands_names[i]; i++) {
-        count++;   
+        count++;
     }
     if (count != info->islands) {
         mx_printerr("error: invalid number of islands\n");

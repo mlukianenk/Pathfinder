@@ -1,0 +1,227 @@
+========================================
+Path: Kyiv -> Kharkiv
+Route: Kyiv -> Nikopol -> Warsaw -> Kharkiv
+Distance: 100 + 100 + 100 = 300
+========================================
+========================================
+Path: Kyiv -> Kharkiv
+Route: Kyiv -> Nikopol -> Paris -> Kharkiv
+Distance: 100 + 100 + 100 = 300
+========================================
+========================================
+Path: Kyiv -> Kharkiv
+Route: Kyiv -> Nikopol -> Prague -> Kharkiv
+Distance: 100 + 100 + 100 = 300
+========================================
+========================================
+Path: Kyiv -> Kharkiv
+Route: Kyiv -> Nikopol -> Singapore -> Kharkiv
+Distance: 100 + 100 + 100 = 300
+========================================
+========================================
+Path: Kyiv -> Kharkiv
+Route: Kyiv -> Nikopol -> Tokyo -> Kharkiv
+Distance: 100 + 100 + 100 = 300
+========================================
+========================================
+Path: Kyiv -> Nikopol
+Route: Kyiv -> Nikopol
+Distance: 100
+========================================
+========================================
+Path: Kyiv -> Warsaw
+Route: Kyiv -> Nikopol -> Warsaw
+Distance: 100 + 100 = 200
+========================================
+========================================
+Path: Kyiv -> Paris
+Route: Kyiv -> Nikopol -> Paris
+Distance: 100 + 100 = 200
+========================================
+========================================
+Path: Kyiv -> Prague
+Route: Kyiv -> Nikopol -> Prague
+Distance: 100 + 100 = 200
+========================================
+========================================
+Path: Kyiv -> Singapore
+Route: Kyiv -> Nikopol -> Singapore
+Distance: 100 + 100 = 200
+========================================
+========================================
+Path: Kyiv -> Tokyo
+Route: Kyiv -> Nikopol -> Tokyo
+Distance: 100 + 100 = 200
+========================================
+========================================
+Path: Kharkiv -> Nikopol
+Route: Kharkiv -> Warsaw -> Nikopol
+Distance: 100 + 100 = 200
+========================================
+========================================
+Path: Kharkiv -> Nikopol
+Route: Kharkiv -> Paris -> Nikopol
+Distance: 100 + 100 = 200
+========================================
+========================================
+Path: Kharkiv -> Nikopol
+Route: Kharkiv -> Prague -> Nikopol
+Distance: 100 + 100 = 200
+========================================
+========================================
+Path: Kharkiv -> Nikopol
+Route: Kharkiv -> Singapore -> Nikopol
+Distance: 100 + 100 = 200
+========================================
+========================================
+Path: Kharkiv -> Nikopol
+Route: Kharkiv -> Tokyo -> Nikopol
+Distance: 100 + 100 = 200
+========================================
+========================================
+Path: Kharkiv -> Warsaw
+Route: Kharkiv -> Warsaw
+Distance: 100
+========================================
+========================================
+Path: Kharkiv -> Paris
+Route: Kharkiv -> Paris
+Distance: 100
+========================================
+========================================
+Path: Kharkiv -> Prague
+Route: Kharkiv -> Prague
+Distance: 100
+========================================
+========================================
+Path: Kharkiv -> Singapore
+Route: Kharkiv -> Singapore
+Distance: 100
+========================================
+========================================
+Path: Kharkiv -> Tokyo
+Route: Kharkiv -> Tokyo
+Distance: 100
+========================================
+========================================
+Path: Nikopol -> Warsaw
+Route: Nikopol -> Warsaw
+Distance: 100
+========================================
+========================================
+Path: Nikopol -> Paris
+Route: Nikopol -> Paris
+Distance: 100
+========================================
+========================================
+Path: Nikopol -> Prague
+Route: Nikopol -> Prague
+Distance: 100
+========================================
+========================================
+Path: Nikopol -> Singapore
+Route: Nikopol -> Singapore
+Distance: 100
+========================================
+========================================
+Path: Nikopol -> Tokyo
+Route: Nikopol -> Tokyo
+Distance: 100
+========================================
+========================================
+Path: Warsaw -> Paris
+Route: Warsaw -> Paris
+Distance: 100
+========================================
+========================================
+Path: Warsaw -> Prague
+Route: Warsaw -> Prague
+Distance: 100
+========================================
+========================================
+Path: Warsaw -> Singapore
+Route: Warsaw -> Singapore
+Distance: 100
+========================================
+========================================
+Path: Warsaw -> Tokyo
+Route: Warsaw -> Tokyo
+Distance: 100
+========================================
+========================================
+Path: Paris -> Prague
+Route: Paris -> Prague
+Distance: 100
+========================================
+========================================
+Path: Paris -> Singapore
+Route: Paris -> Singapore
+Distance: 100
+========================================
+========================================
+Path: Paris -> Tokyo
+Route: Paris -> Tokyo
+Distance: 100
+========================================
+========================================
+Path: Prague -> Singapore
+Route: Prague -> Singapore
+Distance: 100
+========================================
+========================================
+Path: Prague -> Tokyo
+Route: Prague -> Tokyo
+Distance: 100
+========================================
+========================================
+Path: Singapore -> Tokyo
+Route: Singapore -> Tokyo
+Distance: 100
+========================================
+Process:         pathfinder [27192]
+Path:            /Volumes/VOLUME/*/pathfinder
+Load Address:    0x10ff8b000
+Identifier:      pathfinder
+Version:         ???
+Code Type:       X86-64
+Parent Process:  zsh [17966]
+
+Date/Time:       2020-01-16 17:52:08.968 +0200
+Launch Time:     2020-01-16 17:52:08.822 +0200
+OS Version:      Mac OS X 10.14.5 (18F132)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+----
+
+leaks Report Version: 4.0
+Process 27192: 180 nodes malloced for 18 KB
+Process 27192: 9 leaks for 320 total leaked bytes.
+
+    9 (320 bytes) ROOT LEAK: 0x7ffe3ed004d0 [64]
+       1 (32 bytes) 0x7ffe3ed00510 [32]
+       1 (32 bytes) 0x7ffe3ed00530 [32]
+       1 (32 bytes) 0x7ffe3ed00550 [32]
+       1 (32 bytes) 0x7ffe3ed00570 [32]
+       1 (32 bytes) 0x7ffe3ed00590 [32]
+       1 (32 bytes) 0x7ffe3ed005b0 [32]
+       1 (32 bytes) 0x7ffe3ed005d0 [32]
+       1 (32 bytes) 0x7ffe3ed005f0 [32]
+
+file_matrix
+[0]	[471]	[100]	[766]	[2403]	[1141]	[11864]	[11079]	
+[471]	[0]	[340]	[100]	[100]	[100]	[100]	[100]	
+[100]	[340]	[0]	[100]	[100]	[100]	[100]	[100]	
+[766]	[100]	[100]	[0]	[100]	[100]	[100]	[100]	
+[2403]	[100]	[100]	[100]	[0]	[100]	[100]	[100]	
+[1141]	[100]	[100]	[100]	[100]	[0]	[100]	[100]	
+[11864]	[100]	[100]	[100]	[100]	[100]	[0]	[100]	
+[11079]	[100]	[100]	[100]	[100]	[100]	[100]	[0]	
+
+[0]	[300]	[100]	[200]	[200]	[200]	[200]	[200]	
+[300]	[0]	[200]	[100]	[100]	[100]	[100]	[100]	
+[100]	[200]	[0]	[100]	[100]	[100]	[100]	[100]	
+[200]	[100]	[100]	[0]	[100]	[100]	[100]	[100]	
+[200]	[100]	[100]	[100]	[0]	[100]	[100]	[100]	
+[200]	[100]	[100]	[100]	[100]	[0]	[100]	[100]	
+[200]	[100]	[100]	[100]	[100]	[100]	[0]	[100]	
+[200]	[100]	[100]	[100]	[100]	[100]	[100]	[0]	
