@@ -46,7 +46,6 @@ bool mx_invalid_amount(t_form *info);
 bool mx_file_info(t_form *info, const char *file);
 
 //mx_line_errors.c
-// bool mx_invalid_digit(t_form *info, int i, int j);
 bool mx_invalid_lines(t_form *info);
 bool mx_invalid_max_distance(t_form *info);
 bool mx_invalid_first(t_form *info);
@@ -71,5 +70,7 @@ void mx_output_format(t_form *info, t_path *path);
 void mx_print_start(t_form *info, t_path *path);
 void mx_print_route(t_form *info, t_path *path);
 void mx_print_dist(t_form *info, t_path *path);
+
+void mx_del_intarr(int ***arr);
 
 #endif

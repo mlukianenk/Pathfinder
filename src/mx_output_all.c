@@ -47,6 +47,5 @@ void mx_print_dist(t_form *info, t_path *path) {
                 mx_printint(sum);
             }
         }
-        // mx_printstr("\n");
     }
 }

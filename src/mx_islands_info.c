@@ -72,7 +72,8 @@ char **mx_find_exclusive_islands(char *all_lines) {
                 w_repeats[j] = mx_write_zero(w_repeats[j]);
         }
     }
-    find_exclusive_islands_2(no_repeats, w_repeats);
+    no_repeats = find_exclusive_islands_2(no_repeats, w_repeats);
+    return no_repeats;
 }
 
 static char **find_exclusive_islands_2(char **no_repeats, char **w_repeats) {

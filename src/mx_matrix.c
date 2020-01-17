@@ -22,7 +22,10 @@ int mx_get_digit_index(char *line) {
     return mx_atoi(&line[pos]);
 }
 
-static int **fill_mass(t_form *info, int **mass, int i, int j) {
+static void fill_mass(t_form *info, int **mass, int i, int j) {
+    int k = 0;
+    char *island_2 = NULL;
+
     island_2 = mx_memchr(info->all_lines[i], '-',
     mx_strlen(info->all_lines[i]));
     for (k = 0; k < info->islands; k++) {
@@ -37,9 +40,8 @@ static int **fill_mass(t_form *info, int **mass, int i, int j) {
 
 int **mx_create_matrix(t_form *info) {
     int **mass = mx_zero_matrix(info->islands);
-    char *island_2 = NULL;
 
-    for (int i = 1, j = 0, k = 0; info->all_lines[i]; i++) {
+    for (int i = 1, j = 0; info->all_lines[i]; i++) {
         for (j = 0; j < info->islands; j++) {
             if (mx_memcmp(info->all_lines[i], info->islands_names[j],
                 mx_strlen(info->islands_names[j])) == 0) {
@@ -58,11 +60,10 @@ int **mx_create_matrix(t_form *info) {
     return mass;
 }
 
-
     // printf("file_matrix\n");
     // for (int i = 0; i < info->islands; i++) {
     //     for (int j = 0; j < info->islands; j++)
     //         printf("[%d]\t", info->file_matrix[i][j]);
     //     printf("\n");
     // }
-	// printf("\n");
+    // printf("\n");

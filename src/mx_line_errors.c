@@ -39,7 +39,7 @@ bool mx_invalid_first(t_form *info) {
 
 //function that checks lines 
 
-static bool invalid_island1(t_form *info, i, j) {
+static int invalid_island1(t_form *info, int i, int j) {
     while (info->lines[i][j] != '-' && info->lines[i]) {
         if (!(mx_isalpha(info->lines[i][j]))) {
             mx_printerr_line(i + 1);
@@ -47,9 +47,10 @@ static bool invalid_island1(t_form *info, i, j) {
         }
         j++;
     }
+    return j;
 }
 
-static bool invalid_island2(t_form *info, i, j) {
+static int invalid_island2(t_form *info, int i, int j) {
     while (info->lines[i][j] != ',' && info->lines[i]) {
         if (!(mx_isalpha(info->lines[i][j]))) {
             mx_printerr_line(i + 1);
@@ -57,6 +58,7 @@ static bool invalid_island2(t_form *info, i, j) {
         }
         j++;
     }
+    return j;
 }
 
 static bool invalid_distance(t_form *info, int i, int j) {
@@ -71,13 +73,11 @@ static bool invalid_distance(t_form *info, int i, int j) {
 }
 
 bool mx_invalid_lines(t_form *info) {
-    int j = 0;
-
-    for (int i = 1; info->lines[i]; i++) {
+    for (int i = 1, j; info->lines[i]; i++) {
         j = 0;
-        invalid_island1(info, i, j);
+        j = invalid_island1(info, i, j);
         j++;
-        invalid_island2(info, i, j);
+        j = invalid_island2(info, i, j);
         j++;
         if (!(invalid_distance(info, i, j)))
             exit(0);
