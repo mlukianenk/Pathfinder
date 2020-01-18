@@ -13,12 +13,12 @@ void mx_all_output(t_form *info) {
 void mx_output(t_form *info, int start, int end) {
     t_path *path = mx_init_path(info, start, end);
 
-    mx_backtrack(info, path);
+    mx_backtrack(info, path, start, end);
     free(path->path);
     free(path);
 }
 
-void mx_backtrack(t_form *info, t_path *path) {
+void mx_backtrack(t_form *info, t_path *path, int start, int end) {
     if (path->path[path->size] == path->path[0])
         mx_output_format(info, path);
     else {
@@ -28,7 +28,7 @@ void mx_backtrack(t_form *info, t_path *path) {
                     path->size++;
                     path->path[path->size] = i;
                 }
-                mx_backtrack(info, path);
+                mx_backtrack(info, path, start, end);
                 if (path->size > 1)
                     path->size--;
             }

@@ -2,17 +2,6 @@
 
 //writes information about islands from the file
 
-//counts len of multiarr
-int mx_multiarr_len(char **all_islands) {
-    int len = 0;
-
-    for (int i = 1; all_islands[i]; i++) {
-        len += mx_strlen(all_islands[i]);
-        len++;
-    }
-    return len;
-}
-
 //counts without arrs with "0"
 int mx_multilen_no_zero(char **all_islands) {
     int len = 0;
@@ -57,7 +46,8 @@ char **mx_exclusive_islands(t_form *info) {
     return no_repeats;
 }
 
-//deleats repeated names of islands and gives back the multiarr with exclusive islands 
+//deleats repeated names of islands and gives back the multiarr
+//with exclusive islands
 static char **find_exclusive_islands_2(char **no_repeats, char **w_repeats);
 
 char **mx_find_exclusive_islands(char *all_lines) {

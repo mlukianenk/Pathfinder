@@ -62,7 +62,7 @@ void mx_algorithm(t_form *info);
 //mx_output.c
 void mx_all_output(t_form *info);
 void mx_output(t_form *info, int start, int end);
-void mx_backtrack(t_form *info, t_path *path);
+void mx_backtrack(t_form *info, t_path *path, int start, int end);
 int mx_check_path(int n, t_form *info, t_path *path);
  
 //mx_output_all.c

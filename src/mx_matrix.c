@@ -50,7 +50,6 @@ int **mx_create_matrix(t_form *info) {
         }
         fill_mass(info, mass, i, j);
     }
-    // info->matrix = mass;
     info->file_matrix = (int**)malloc(sizeof(int*) * info->islands);
     for (int i = 0; i < info->islands; i++) {
         info->file_matrix[i] = (int*)malloc(sizeof(int) * info->islands);

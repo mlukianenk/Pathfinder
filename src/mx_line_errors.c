@@ -28,7 +28,7 @@ bool mx_invalid_first(t_form *info) {
             exit(0);
         }
     }
-    if (mx_atoi(info->lines[0]) > 2147483647 || mx_atoi(info->lines[0]) < 1) {
+    if (mx_atoi(info->lines[0]) > 2147483647) {
         mx_printerr("error: line 1 is not valid \n");
         exit(0);
     }
