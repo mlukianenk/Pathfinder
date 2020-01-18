@@ -8,7 +8,7 @@ int **mx_zero_matrix(int N) {
     for (i = 0; i < N; i++) {
         mass[i] = (int *)malloc(sizeof(int) * N);
         for (j = 0; j < N; j++)
-            mass[i][j] = 100;
+            mass[i][j] = 21474836;
     }
     for (int j = 0; j < N; j++)
             mass[j][j] = 0;
@@ -50,20 +50,19 @@ int **mx_create_matrix(t_form *info) {
         }
         fill_mass(info, mass, i, j);
     }
-    info->matrix = mass;
+    // info->matrix = mass;
     info->file_matrix = (int**)malloc(sizeof(int*) * info->islands);
     for (int i = 0; i < info->islands; i++) {
         info->file_matrix[i] = (int*)malloc(sizeof(int) * info->islands);
         for(int j = 0; j < info->islands; j++)
             info->file_matrix[i][j] = mass[i][j];
     }
-    return mass;
-}
-
-    // printf("file_matrix\n");
+    info->matrix = mass;
+    //  printf("\n");
     // for (int i = 0; i < info->islands; i++) {
     //     for (int j = 0; j < info->islands; j++)
-    //         printf("[%d]\t", info->file_matrix[i][j]);
+    //         printf("[%d]\t", info->matrix[i][j]);
     //     printf("\n");
     // }
-    // printf("\n");
+    return mass;
+}

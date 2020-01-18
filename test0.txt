@@ -28,38 +28,3 @@ Path: Fraser -> Java
 Route: Fraser -> Java
 Distance: 5
 ========================================
-Process:         pathfinder [27003]
-Path:            /Volumes/VOLUME/*/pathfinder
-Load Address:    0x1053d3000
-Identifier:      pathfinder
-Version:         ???
-Code Type:       X86-64
-Parent Process:  zsh [17966]
-
-Date/Time:       2020-01-16 17:50:29.216 +0200
-Launch Time:     2020-01-16 17:50:28.890 +0200
-OS Version:      Mac OS X 10.14.5 (18F132)
-Report Version:  7
-Analysis Tool:   /usr/bin/leaks
-----
-
-leaks Report Version: 4.0
-Process 27003: 172 nodes malloced for 18 KB
-Process 27003: 5 leaks for 96 total leaked bytes.
-
-    5 (96 bytes) ROOT LEAK: 0x7fe283500250 [32]
-       1 (16 bytes) 0x7fe2835002a0 [16]
-       1 (16 bytes) 0x7fe2835002b0 [16]
-       1 (16 bytes) 0x7fe2835002c0 [16]  length: 1  ""
-       1 (16 bytes) 0x7fe2835002d0 [16]  length: 1  "d"
-
-file_matrix
-[0]	[8]	[10]	[100]	
-[8]	[0]	[3]	[100]	
-[10]	[3]	[0]	[5]	
-[100]	[100]	[5]	[0]	
-
-[0]	[8]	[10]	[15]	
-[8]	[0]	[3]	[8]	
-[10]	[3]	[0]	[5]	
-[15]	[8]	[5]	[0]	

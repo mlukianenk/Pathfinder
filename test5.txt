@@ -1,227 +1,140 @@
 ========================================
 Path: Kyiv -> Kharkiv
-Route: Kyiv -> Nikopol -> Warsaw -> Kharkiv
-Distance: 100 + 100 + 100 = 300
-========================================
-========================================
-Path: Kyiv -> Kharkiv
-Route: Kyiv -> Nikopol -> Paris -> Kharkiv
-Distance: 100 + 100 + 100 = 300
-========================================
-========================================
-Path: Kyiv -> Kharkiv
-Route: Kyiv -> Nikopol -> Prague -> Kharkiv
-Distance: 100 + 100 + 100 = 300
-========================================
-========================================
-Path: Kyiv -> Kharkiv
-Route: Kyiv -> Nikopol -> Singapore -> Kharkiv
-Distance: 100 + 100 + 100 = 300
-========================================
-========================================
-Path: Kyiv -> Kharkiv
-Route: Kyiv -> Nikopol -> Tokyo -> Kharkiv
-Distance: 100 + 100 + 100 = 300
+Route: Kyiv -> Kharkiv
+Distance: 471
 ========================================
 ========================================
 Path: Kyiv -> Nikopol
-Route: Kyiv -> Nikopol
-Distance: 100
+Route: Kyiv -> Kharkiv -> Nikopol
+Distance: 471 + 340 = 811
 ========================================
 ========================================
 Path: Kyiv -> Warsaw
-Route: Kyiv -> Nikopol -> Warsaw
-Distance: 100 + 100 = 200
+Route: Kyiv -> Warsaw
+Distance: 766
 ========================================
 ========================================
 Path: Kyiv -> Paris
-Route: Kyiv -> Nikopol -> Paris
-Distance: 100 + 100 = 200
+Route: Kyiv -> Paris
+Distance: 2403
 ========================================
 ========================================
 Path: Kyiv -> Prague
-Route: Kyiv -> Nikopol -> Prague
-Distance: 100 + 100 = 200
+Route: Kyiv -> Prague
+Distance: 1141
 ========================================
 ========================================
 Path: Kyiv -> Singapore
-Route: Kyiv -> Nikopol -> Singapore
-Distance: 100 + 100 = 200
+Route: Kyiv -> Singapore
+Distance: 11864
 ========================================
 ========================================
 Path: Kyiv -> Tokyo
-Route: Kyiv -> Nikopol -> Tokyo
-Distance: 100 + 100 = 200
+Route: Kyiv -> Tokyo
+Distance: 11079
 ========================================
 ========================================
 Path: Kharkiv -> Nikopol
-Route: Kharkiv -> Warsaw -> Nikopol
-Distance: 100 + 100 = 200
-========================================
-========================================
-Path: Kharkiv -> Nikopol
-Route: Kharkiv -> Paris -> Nikopol
-Distance: 100 + 100 = 200
-========================================
-========================================
-Path: Kharkiv -> Nikopol
-Route: Kharkiv -> Prague -> Nikopol
-Distance: 100 + 100 = 200
-========================================
-========================================
-Path: Kharkiv -> Nikopol
-Route: Kharkiv -> Singapore -> Nikopol
-Distance: 100 + 100 = 200
-========================================
-========================================
-Path: Kharkiv -> Nikopol
-Route: Kharkiv -> Tokyo -> Nikopol
-Distance: 100 + 100 = 200
+Route: Kharkiv -> Nikopol
+Distance: 340
 ========================================
 ========================================
 Path: Kharkiv -> Warsaw
-Route: Kharkiv -> Warsaw
-Distance: 100
+Route: Kharkiv -> Kyiv -> Warsaw
+Distance: 471 + 766 = 1237
 ========================================
 ========================================
 Path: Kharkiv -> Paris
-Route: Kharkiv -> Paris
-Distance: 100
+Route: Kharkiv -> Kyiv -> Paris
+Distance: 471 + 2403 = 2874
 ========================================
 ========================================
 Path: Kharkiv -> Prague
-Route: Kharkiv -> Prague
-Distance: 100
+Route: Kharkiv -> Kyiv -> Prague
+Distance: 471 + 1141 = 1612
 ========================================
 ========================================
 Path: Kharkiv -> Singapore
-Route: Kharkiv -> Singapore
-Distance: 100
+Route: Kharkiv -> Kyiv -> Singapore
+Distance: 471 + 11864 = 12335
 ========================================
 ========================================
 Path: Kharkiv -> Tokyo
-Route: Kharkiv -> Tokyo
-Distance: 100
+Route: Kharkiv -> Kyiv -> Tokyo
+Distance: 471 + 11079 = 11550
 ========================================
 ========================================
 Path: Nikopol -> Warsaw
-Route: Nikopol -> Warsaw
-Distance: 100
+Route: Nikopol -> Kharkiv -> Kyiv -> Warsaw
+Distance: 340 + 471 + 766 = 1577
 ========================================
 ========================================
 Path: Nikopol -> Paris
-Route: Nikopol -> Paris
-Distance: 100
+Route: Nikopol -> Kharkiv -> Kyiv -> Paris
+Distance: 340 + 471 + 2403 = 3214
 ========================================
 ========================================
 Path: Nikopol -> Prague
-Route: Nikopol -> Prague
-Distance: 100
+Route: Nikopol -> Kharkiv -> Kyiv -> Prague
+Distance: 340 + 471 + 1141 = 1952
 ========================================
 ========================================
 Path: Nikopol -> Singapore
-Route: Nikopol -> Singapore
-Distance: 100
+Route: Nikopol -> Kharkiv -> Kyiv -> Singapore
+Distance: 340 + 471 + 11864 = 12675
 ========================================
 ========================================
 Path: Nikopol -> Tokyo
-Route: Nikopol -> Tokyo
-Distance: 100
+Route: Nikopol -> Kharkiv -> Kyiv -> Tokyo
+Distance: 340 + 471 + 11079 = 11890
 ========================================
 ========================================
 Path: Warsaw -> Paris
-Route: Warsaw -> Paris
-Distance: 100
+Route: Warsaw -> Kyiv -> Paris
+Distance: 766 + 2403 = 3169
 ========================================
 ========================================
 Path: Warsaw -> Prague
-Route: Warsaw -> Prague
-Distance: 100
+Route: Warsaw -> Kyiv -> Prague
+Distance: 766 + 1141 = 1907
 ========================================
 ========================================
 Path: Warsaw -> Singapore
-Route: Warsaw -> Singapore
-Distance: 100
+Route: Warsaw -> Kyiv -> Singapore
+Distance: 766 + 11864 = 12630
 ========================================
 ========================================
 Path: Warsaw -> Tokyo
-Route: Warsaw -> Tokyo
-Distance: 100
+Route: Warsaw -> Kyiv -> Tokyo
+Distance: 766 + 11079 = 11845
 ========================================
 ========================================
 Path: Paris -> Prague
-Route: Paris -> Prague
-Distance: 100
+Route: Paris -> Kyiv -> Prague
+Distance: 2403 + 1141 = 3544
 ========================================
 ========================================
 Path: Paris -> Singapore
-Route: Paris -> Singapore
-Distance: 100
+Route: Paris -> Kyiv -> Singapore
+Distance: 2403 + 11864 = 14267
 ========================================
 ========================================
 Path: Paris -> Tokyo
-Route: Paris -> Tokyo
-Distance: 100
+Route: Paris -> Kyiv -> Tokyo
+Distance: 2403 + 11079 = 13482
 ========================================
 ========================================
 Path: Prague -> Singapore
-Route: Prague -> Singapore
-Distance: 100
+Route: Prague -> Kyiv -> Singapore
+Distance: 1141 + 11864 = 13005
 ========================================
 ========================================
 Path: Prague -> Tokyo
-Route: Prague -> Tokyo
-Distance: 100
+Route: Prague -> Kyiv -> Tokyo
+Distance: 1141 + 11079 = 12220
 ========================================
 ========================================
 Path: Singapore -> Tokyo
-Route: Singapore -> Tokyo
-Distance: 100
+Route: Singapore -> Kyiv -> Tokyo
+Distance: 11864 + 11079 = 22943
 ========================================
-Process:         pathfinder [27192]
-Path:            /Volumes/VOLUME/*/pathfinder
-Load Address:    0x10ff8b000
-Identifier:      pathfinder
-Version:         ???
-Code Type:       X86-64
-Parent Process:  zsh [17966]
-
-Date/Time:       2020-01-16 17:52:08.968 +0200
-Launch Time:     2020-01-16 17:52:08.822 +0200
-OS Version:      Mac OS X 10.14.5 (18F132)
-Report Version:  7
-Analysis Tool:   /usr/bin/leaks
-----
-
-leaks Report Version: 4.0
-Process 27192: 180 nodes malloced for 18 KB
-Process 27192: 9 leaks for 320 total leaked bytes.
-
-    9 (320 bytes) ROOT LEAK: 0x7ffe3ed004d0 [64]
-       1 (32 bytes) 0x7ffe3ed00510 [32]
-       1 (32 bytes) 0x7ffe3ed00530 [32]
-       1 (32 bytes) 0x7ffe3ed00550 [32]
-       1 (32 bytes) 0x7ffe3ed00570 [32]
-       1 (32 bytes) 0x7ffe3ed00590 [32]
-       1 (32 bytes) 0x7ffe3ed005b0 [32]
-       1 (32 bytes) 0x7ffe3ed005d0 [32]
-       1 (32 bytes) 0x7ffe3ed005f0 [32]
-
-file_matrix
-[0]	[471]	[100]	[766]	[2403]	[1141]	[11864]	[11079]	
-[471]	[0]	[340]	[100]	[100]	[100]	[100]	[100]	
-[100]	[340]	[0]	[100]	[100]	[100]	[100]	[100]	
-[766]	[100]	[100]	[0]	[100]	[100]	[100]	[100]	
-[2403]	[100]	[100]	[100]	[0]	[100]	[100]	[100]	
-[1141]	[100]	[100]	[100]	[100]	[0]	[100]	[100]	
-[11864]	[100]	[100]	[100]	[100]	[100]	[0]	[100]	
-[11079]	[100]	[100]	[100]	[100]	[100]	[100]	[0]	
-
-[0]	[300]	[100]	[200]	[200]	[200]	[200]	[200]	
-[300]	[0]	[200]	[100]	[100]	[100]	[100]	[100]	
-[100]	[200]	[0]	[100]	[100]	[100]	[100]	[100]	
-[200]	[100]	[100]	[0]	[100]	[100]	[100]	[100]	
-[200]	[100]	[100]	[100]	[0]	[100]	[100]	[100]	
-[200]	[100]	[100]	[100]	[100]	[0]	[100]	[100]	
-[200]	[100]	[100]	[100]	[100]	[100]	[0]	[100]	
-[200]	[100]	[100]	[100]	[100]	[100]	[100]	[0]	

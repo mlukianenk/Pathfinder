@@ -3,6 +3,13 @@
 void mx_algorithm(t_form *info) {
     int new_distance = 0;
 
+    // printf("\n");
+    // for (int i = 0; i < info->islands; i++) {
+    //     for (int j = 0; j < info->islands; j++)
+    //         printf("[%d]\t", info->matrix[i][j]);
+    //     printf("\n");
+    // }
+
     for (int k = 0; k < info->islands; k++) {
         for (int i = 0; i < info->islands; i++) {
             for (int j = 0; j < info->islands; j++) {
@@ -12,9 +19,17 @@ void mx_algorithm(t_form *info) {
             }
         }
     }
-    // for (int i = 0; i < info->islands; i++) {
-    //     for (int j = 0; j < info->islands; j++)
-    //         printf("[%d]\t", info->matrix[i][j]);
-    //     printf("\n");
-    // }
+//      printf("\n");
+//     for (int i = 0; i < info->islands; i++) {
+//         for (int j = 0; j < info->islands; j++)
+//             printf("[%d]\t", info->matrix[i][j]);
+//         printf("\n");
+//     }
+// exit(0);
+        // for (int i = 0; i < info->islands; i++) 
+        //         mx_printstr(info->islands_names[i]);
+//         // for (int j = 0; j < info->islands; j++)
+//             printf("[%s]\t", info->islands_names[i]);
+//         printf("\n");
+//     }
 }

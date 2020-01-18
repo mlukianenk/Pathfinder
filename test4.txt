@@ -28,38 +28,3 @@ Path: Zero -> Eight
 Route: Zero -> Eight
 Distance: 8
 ========================================
-Process:         pathfinder [27178]
-Path:            /Volumes/VOLUME/*/pathfinder
-Load Address:    0x108c03000
-Identifier:      pathfinder
-Version:         ???
-Code Type:       X86-64
-Parent Process:  zsh [17966]
-
-Date/Time:       2020-01-16 17:52:03.949 +0200
-Launch Time:     2020-01-16 17:52:03.806 +0200
-OS Version:      Mac OS X 10.14.5 (18F132)
-Report Version:  7
-Analysis Tool:   /usr/bin/leaks
-----
-
-leaks Report Version: 4.0
-Process 27178: 172 nodes malloced for 18 KB
-Process 27178: 5 leaks for 96 total leaked bytes.
-
-    5 (96 bytes) ROOT LEAK: 0x7fb449d00200 [32]
-       1 (16 bytes) 0x7fb449d001c0 [16]
-       1 (16 bytes) 0x7fb449d00220 [16]
-       1 (16 bytes) 0x7fb449d00230 [16]  length: 1  "d"
-       1 (16 bytes) 0x7fb449d00240 [16]  length: 1  "d"
-
-file_matrix
-[0]	[1]	[100]	[100]	
-[1]	[0]	[2]	[100]	
-[100]	[2]	[0]	[8]	
-[100]	[100]	[8]	[0]	
-
-[0]	[1]	[3]	[11]	
-[1]	[0]	[2]	[10]	
-[3]	[2]	[0]	[8]	
-[11]	[10]	[8]	[0]	

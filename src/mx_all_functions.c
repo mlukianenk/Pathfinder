@@ -13,16 +13,15 @@ void mx_all_functions(char *argv[], t_form *info) {
 	mx_algorithm(info);
 	mx_all_output(info);
 	mx_delete_liks(info);
-	system("leaks pathfinder");
-	system("leaks pathfinder");
+
 }
 
 void mx_delete_liks(t_form *info) {
 	mx_del_strarr(&info->lines);
 	mx_del_strarr(&info->all_lines);
 	mx_del_strarr(&info->islands_names);
-	mx_del_intarr(&info->file_matrix);
-	mx_del_intarr(&info->matrix);
+	mx_del_int_arr(info->file_matrix, info->islands);
+	mx_del_int_arr(info->matrix, info->islands);
 	// for (int i= 0; i < 100; i++)
 	// printf("%d" , info->matrix[0][1] );
 

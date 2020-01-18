@@ -71,6 +71,6 @@ void mx_print_start(t_form *info, t_path *path);
 void mx_print_route(t_form *info, t_path *path);
 void mx_print_dist(t_form *info, t_path *path);
 
-void mx_del_intarr(int ***arr);
-
+// void mx_del_intarr(int ***arr);
+void mx_del_int_arr(int **arr, int size);
 #endif
