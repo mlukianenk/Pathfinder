@@ -69,8 +69,8 @@ mx_sort_list.c \
 SRCS	=	$(addprefix $(SRCD)/, $(SRC))
 OBJS	=	$(addprefix $(OBJD)/, $(SRC:%.c=%.o))
 
-all: install clean
-	
+all: install
+
 install: $(NAME)
 
 $(NAME): $(OBJS)

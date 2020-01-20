@@ -22,6 +22,10 @@ bool mx_invalid_max_distance(t_form *info) {
 //function that checks lines
 
 static int invalid_island1(t_form *info, int i, int j) {
+	if (!(mx_isalpha(info->lines[i][0]))) {
+		mx_printerr_line(i + 1);
+		exit(0);
+	}
 	while (info->lines[i][j] != '-' && info->lines[i]) {
 		if (!(mx_isalpha(info->lines[i][j]))) {
 			mx_printerr_line(i + 1);
@@ -33,6 +37,10 @@ static int invalid_island1(t_form *info, int i, int j) {
 }
 
 static int invalid_island2(t_form *info, int i, int j) {
+	if (!(mx_isalpha(info->lines[i][j]))) {
+		mx_printerr_line(i + 1);
+		exit(0);
+	}
 	while (info->lines[i][j] != ',' && info->lines[i]) {
 		if (!(mx_isalpha(info->lines[i][j]))) {
 			mx_printerr_line(i + 1);

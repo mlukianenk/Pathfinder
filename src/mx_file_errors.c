@@ -37,12 +37,12 @@ bool mx_file_info(t_form *info, const char *file) {
 
 	if (file_lines[0] == '0' && file_lines[1] == '\0')
 		exit(0);
-	for (int i = 0, j = 0; file_lines[i]; i++) {
+	for (int i = 0, j = 1; file_lines[i]; i++) {
 		if (file_lines[i] == '\n' && file_lines[i + 1] != '\n')
 			j++;
 		if (file_lines[i] == '\n' && file_lines[i + 1] == '\n') {
 			mx_printerr("error: line ");
-			mx_printerr(mx_itoa(i + 1));
+			mx_printerr(mx_itoa(j + 1));
 			mx_printerr(" is not valid\n");
 			exit(0);
 		}
